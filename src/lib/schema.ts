@@ -29,6 +29,8 @@ export function getUserAge(root: co.loaded<typeof AccountRoot> | undefined) {
   const today = new Date();
   const birthDate = root.dateOfBirth;
 
+  if (!birthDate) return null;
+
   let age = today.getFullYear() - birthDate.getFullYear();
 
   // Check if the birthday hasn't occurred yet this year
@@ -66,7 +68,6 @@ export const JazzAccount = co
         "profile",
         JazzProfile.create(
           {
-            name: "",
             firstName: "",
           },
           group,
