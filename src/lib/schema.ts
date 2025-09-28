@@ -13,6 +13,7 @@ export const JazzProfile = co.profile({
    * https://jazz.tools/docs/svelte/schemas/covalues#covalue-fielditem-types
    */
   firstName: z.string(),
+  name: z.string(),
 
   // Add public fields here
 });
@@ -69,6 +70,7 @@ export const JazzAccount = co
         JazzProfile.create(
           {
             firstName: "",
+            name: "",
           },
           group,
         ),
